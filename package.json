@@ -8,12 +8,17 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@expo/vector-icons": "^10.2.1",
     "expo": "~38.0.8",
+    "expo-asset": "~8.1.7",
     "expo-status-bar": "^1.0.2",
+    "npm-upgrade": "^2.0.4",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native-app-intro-slider": "^4.0.4",
+    "react-native-svg": "12.1.0",
     "react-native-web": "~0.11.7",
     "react-restore": "^0.3.0"
   },
