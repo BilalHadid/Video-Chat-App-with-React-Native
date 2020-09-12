@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import CreatePhone from "./components/CreateAccountPhone";
+import ContactSync from "./components/ContactSync";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <CreatePhone />
+      <ContactSync />
     </View>
   );
 }

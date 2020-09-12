@@ -5,8 +5,8 @@ import {
   Text,
   TouchableOpacity,
   TextInput,
+  Image,
 } from "react-native";
-import { Item, Input } from "native-base";
 
 import {
   Fontisto,
@@ -15,7 +15,7 @@ import {
   Feather,
 } from "@expo/vector-icons";
 
-export default function CreatePhone() {
+export default function CreateEmail() {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -29,7 +29,11 @@ export default function CreatePhone() {
       <Text style={styles.mainHead}>Create New Account</Text>
 
       <TouchableOpacity>
-        <Fontisto style={styles.imager} name="male" size={84} color="white" />
+        <Image
+          style={styles.stretch}
+          source={require("../assets/bglogo.jpg")}
+        />
+        {/* <Fontisto style={styles.imager} name="male" size={84} color="white" /> */}
         <MaterialCommunityIcons
           style={styles.addimager}
           name="camera-plus-outline"
@@ -48,18 +52,19 @@ export default function CreatePhone() {
           style={styles.textInput}
           placeholderTextColor="black"
         />
+        <TextInput
+          placeholder="Your Email"
+          style={styles.textInput}
+          placeholderTextColor="black"
+        />
+        <TextInput
+          placeholder="Password"
+          style={styles.textInput}
+          placeholderTextColor="black"
+        />
 
-        <Item rounded style={styles.itemStyle}>
-          <Feather
-            name="phone"
-            size={24}
-            color="black"
-            style={styles.iconStyle}
-          />
-          <Input style={styles.inputStyle} placeholder="Phone Number" />
-        </Item>
         <TouchableOpacity>
-          <Text style={styles.loghe}>Send Code</Text>
+          <Text style={styles.loghe}>Sign Up</Text>
         </TouchableOpacity>
         <Text
           style={{
@@ -73,7 +78,7 @@ export default function CreatePhone() {
           OR
         </Text>
         <TouchableOpacity>
-          <Text style={styles.sighe}>Sign Up With Email</Text>
+          <Text style={styles.sighe}>Sign Up With Phone</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -110,6 +115,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   loghe: {
+    marginVertical: 5,
     left: 50,
     borderWidth: 1,
     padding: 15,
@@ -152,7 +158,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     paddingLeft: 30,
     marginVertical: 5,
-    borderColor: "rgba(0,0,0,2)",
+    borderColor: "rgba(1,1,1,2)",
   },
   back: {
     top: -50,
@@ -164,5 +170,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     right: 30,
     top: -45,
+  },
+  stretch: {
+    height: 120,
+    width: 120,
+    borderRadius: 70,
   },
 });
