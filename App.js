@@ -1,12 +1,14 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import Home from "./components/MainProfile";
-
+import { MyDrawer } from "./components/MainProfile";
+import { NavigationContainer } from "@react-navigation/native";
+import IntoSlide from "./components/IntoSlide";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Home />
-    </View>
+    // <NavigationContainer>
+    //   <MyDrawer />
+    // </NavigationContainer>
+    <IntoSlide />
   );
 }
 

@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, Dimensions, TextInput } from "react-native";
 import Svg, { Image, Circle, ClipPath } from "react-native-svg";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Animated, { Easing } from "react-native-reanimated";
-import { TapGestureHandler, State } from "react-native-gesture-handler";
+import {
+  TapGestureHandler,
+  State,
+  TouchableOpacity,
+} from "react-native-gesture-handler";
 const { width, height } = Dimensions.get("window");
 
 const {
@@ -137,7 +141,7 @@ class MusicApp extends Component {
             </ClipPath>
 
             <Image
-              href={require("../assets/5.jpg")}
+              href={require("../assets/3.png")}
               width={width}
               height={height + 50}
               preserveAspectRatio="xMidYMid slice"
@@ -147,7 +151,7 @@ class MusicApp extends Component {
         </Animated.View>
         <Animated.View style={styles.container}>
           <MaterialCommunityIcons name="camera" size={160} color="#487EFB" />
-          <Text style={styles.mainhe}>Instanchatty</Text>
+          <Text style={styles.mainhe}>Video Call</Text>
         </Animated.View>
         <View style={{ height: height / 3, justifyContent: "center" }}>
           <TapGestureHandler onHandlerStateChange={this.onStateChange}>
@@ -207,7 +211,22 @@ class MusicApp extends Component {
               placeholderTextColor="black"
             />
             <Animated.View style={styles.button}>
-              <Text style={{ fontSize: 20, fontWeight: "bold" }}>Sign In </Text>
+              <TouchableOpacity>
+                <Text
+                  style={{
+                    backgroundColor: "#487EFb",
+                    width: 200,
+                    textAlign: "center",
+                    padding: 10,
+                    borderRadius: 10,
+                    fontSize: 25,
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Sign In{" "}
+                </Text>
+              </TouchableOpacity>
             </Animated.View>
           </Animated.View>
         </View>

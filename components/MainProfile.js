@@ -7,17 +7,58 @@ import {
   Image,
   TouchableOpacity,
   StatusBar,
-  Dimensions,
+  ScrollView,
 } from "react-native";
 import { Container } from "native-base";
 import { Entypo, Feather } from "@expo/vector-icons";
 import Tabs from "./Tabs";
-import { DrawerNavigation } from "react-navigation";
-// import { Button, View } from "react-native";
-// import { createDrawerNavigator } from "@react-navigation/drawer";
-// import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DrawerActions } from "@react-navigation/native";
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from "@react-navigation/drawer";
+import CreateEmail from "./CreateAccountEmail";
+import ContactSync from "./ContactSync";
+import SignIn from "./SignIn";
 
-export default function Home() {
+function CustomDrawerContent(props) {
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+
+      <DrawerItem
+        label="Close drawer"
+        onPress={() => props.navigation.dispatch(DrawerActions.closeDrawer())}
+      />
+      <DrawerItem
+        label="Toggle "
+        onPress={() => props.navigation.dispatch(DrawerActions.toggleDrawer())}
+      />
+      <Image style={styles.stretch} source={require("../assets/bglogo.jpg")} />
+      <Text style={{ left: 80, top: 5, fontWeight: "bold" }}>Bilal Hadid</Text>
+    </DrawerContentScrollView>
+  );
+}
+const Drawer = createDrawerNavigator();
+export function MyDrawer() {
+  return (
+    <>
+      <Drawer.Navigator
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
+      >
+        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Create Your Account" component={CreateEmail} />
+        <Drawer.Screen name="Contact Sync" component={ContactSync} />
+
+        <Drawer.Screen name="Log out" component={SignIn} />
+      </Drawer.Navigator>
+    </>
+  );
+}
+
+export default function Home({ navigation }) {
   return (
     <>
       <StatusBar
@@ -25,10 +66,11 @@ export default function Home() {
         backgroundColor="transparent"
         barStyle="light-content"
       />
+
       <Container>
         <View style={styles.container}>
           <ImageBackground
-            source={require("../assets/bglogo.jpg")}
+            source={require("../assets/bg3.jpg")}
             style={styles.image}
           >
             <Entypo
@@ -36,6 +78,7 @@ export default function Home() {
               size={40}
               color="white"
               style={{ top: -170, left: 10 }}
+              onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
             />
             <View style={{ top: 120 }}>
               <TouchableOpacity>
@@ -93,5 +136,11 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     left: 350,
+  },
+  stretch: {
+    height: 150,
+    width: 150,
+    borderRadius: 75,
+    left: 50,
   },
 });

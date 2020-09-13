@@ -1,10 +1,10 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 
 export default function Profile() {
   return (
     <View style={styles.container}>
-      <Text>Assalam o alaikum bilal</Text>
+      <Image style={styles.stretch} source={require("../assets/bglogo.jpg")} />
     </View>
   );
 }

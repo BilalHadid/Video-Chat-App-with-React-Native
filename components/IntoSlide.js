@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons, AntDesign } from "@expo/vector-icons";
 import { EvilIcons } from "@expo/vector-icons";
 import img1 from "../assets/2.jpg";
+import SignIn from "./SignIn";
 
 const styles = StyleSheet.create({
   buttonCircle: {
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "blue",
+    backgroundColor: "#487EFB",
   },
   image: {
     flex: 1,
@@ -31,9 +32,16 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   title: {
+    top: 50,
     fontSize: 22,
     color: "white",
     textAlign: "center",
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+    width: 410,
   },
   dotStloe: { backgroundColor: "rgba(255, 255, 255, .9)", height: 20 },
   //[...]
@@ -42,38 +50,41 @@ const styles = StyleSheet.create({
 const slides = [
   {
     key: 1,
-    title: "Title 1",
-    text: "Description.\nSay something cool",
+    title: "Private Message",
+    icon: {},
+    text: ".\nCommunicate With your friend via Private Message",
     image: {
       uri:
-        "https://i.pinimg.com/736x/fa/4a/b4/fa4ab4eed72c9f7c040acc553dfa4c4b.jpg",
+        "https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg",
     },
     backgroundColor: "#59b2ab",
   },
   {
     key: 2,
-    title: "Title 2",
-    text: "Other cool stuff",
+    title: "Bussiness Contact",
+    icon: "addusergroup",
+    text: "Create a bussiness contact",
     image: {
       uri:
-        "https://i.pinimg.com/736x/fa/4a/b4/fa4ab4eed72c9f7c040acc553dfa4c4b.jpg",
+        "https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg",
     },
     backgroundColor: "#febe29",
   },
   {
     key: 3,
-    title: "Rocket guy",
-    text: "I'm already out of descriptions\n\nLorem ipsum bla bla bla",
+    title: "Send Photo & Video",
+    icon: "camera",
+    text: "Have Fun with your friend by sending photos and video to each other",
     image: {
       uri:
-        "https://i.pinimg.com/736x/fa/4a/b4/fa4ab4eed72c9f7c040acc553dfa4c4b.jpg",
+        "https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg",
     },
     backgroundColor: "black",
   },
 ];
 const image = {
   uri:
-    "https://i.pinimg.com/736x/fa/4a/b4/fa4ab4eed72c9f7c040acc553dfa4c4b.jpg",
+    "https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg",
 };
 export default class IntoSlide extends Component {
   constructor(props) {
@@ -106,34 +117,21 @@ export default class IntoSlide extends Component {
   _renderItem = ({ item }) => {
     return (
       <View style={styles.slide}>
-        <Text style={styles.title}>{item.text}</Text>
-        <Image style={styles.image} source={image} />
-        <Text style={styles.text}>This Is World</Text>
+        <ImageBackground
+          source={require("../assets/1last.jpg")}
+          style={styles.image}
+        >
+          <AntDesign name={this.icon} size={100} color="white" />
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.title}>{item.text}</Text>
+        </ImageBackground>
       </View>
     );
   };
 
   render() {
     if (this.state.showRealApp) {
-      return (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-            padding: 50,
-            backgroundColor: "#febe29",
-            color: "white",
-          }}
-        >
-          <ImageBackground style={styles.image} source={image} />
-          <Text>
-            {" "}
-            This will be your screen when you click Skip from any slide or Done
-            button at last
-          </Text>
-        </View>
-      );
+      return <SignIn />;
     } else {
       return (
         <AppIntroSlider
