@@ -43,7 +43,7 @@ export default function ContactSync() {
       </View>
       <View>
         <TouchableOpacity>
-          <Text style={styles.okbutton}>Sign Up With Phone</Text>
+          <Text style={styles.okbutton}>OK</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
-import ContactSync from "./components/ContactSync";
+import Home from "./components/MainProfile";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ContactSync />
+      <Home />
     </View>
   );
 }
