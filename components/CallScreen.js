@@ -6,17 +6,17 @@ import {
   Ionicons,
 } from "@expo/vector-icons";
 
-export default function VideoCallScreen() {
+const CallScreen = () => {
   return (
     <ImageBackground
       blurRadius={10}
-      source={require("./assets/dp1.jpeg")}
+      source={require("../assets/dp1.jpeg")}
       style={styles.container}
     >
       <Image
         style={styles.image}
         borderRadius={100}
-        source={require("./assets/dp1.jpeg")}
+        source={require("../assets/dp1.jpeg")}
       />
       <Text style={styles.text}>Adam Smith</Text>
       <Text style={styles.timer}>00:50</Text>
@@ -50,8 +50,8 @@ export default function VideoCallScreen() {
       </View>
     </ImageBackground>
   );
-}
-
+};
+export default CallScreen;
 const styles = StyleSheet.create({
   text: {
     position: "absolute",
