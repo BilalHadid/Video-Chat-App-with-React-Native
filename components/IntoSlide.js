@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ImageBackground,
+  Alert,
+} from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { MaterialIcons, AntDesign } from "@expo/vector-icons";
-import { EvilIcons } from "@expo/vector-icons";
+import { EvilIcons, FontAwesome5 } from "@expo/vector-icons";
 import img1 from "../assets/2.jpg";
 import SignIn from "./SignIn";
 
@@ -43,6 +50,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     width: 410,
   },
+  headt: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 25,
+    textAlign: "center",
+    bottom: -40,
+  },
   dotStloe: { backgroundColor: "rgba(255, 255, 255, .9)", height: 20 },
   //[...]
 });
@@ -51,8 +65,8 @@ const slides = [
   {
     key: 1,
     title: "Private Message",
-    icon: {},
-    text: ".\nCommunicate With your friend via Private Message",
+    icon: "facebook-messenger",
+    text: "Communicate With your friend via Private Message",
     image: {
       uri:
         "https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg",
@@ -62,12 +76,9 @@ const slides = [
   {
     key: 2,
     title: "Bussiness Contact",
-    icon: "addusergroup",
+    icon: "video",
     text: "Create a bussiness contact",
-    image: {
-      uri:
-        "https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg",
-    },
+
     backgroundColor: "#febe29",
   },
   {
@@ -75,10 +86,7 @@ const slides = [
     title: "Send Photo & Video",
     icon: "camera",
     text: "Have Fun with your friend by sending photos and video to each other",
-    image: {
-      uri:
-        "https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg",
-    },
+
     backgroundColor: "black",
   },
 ];
@@ -97,14 +105,14 @@ export default class IntoSlide extends Component {
   _renderNextButton = () => {
     return (
       <View style={styles.buttonCircle}>
-        <MaterialIcons name="navigate-next" size={24} color="black" />
+        <MaterialIcons name="navigate-next" size={40} color="white" />
       </View>
     );
   };
   _renderDoneButton = () => {
     return (
       <View style={styles.buttonCircle}>
-        <EvilIcons name="check" size={24} color="black" />
+        <EvilIcons name="check" size={40} color="white" />
       </View>
     );
   };
@@ -121,8 +129,13 @@ export default class IntoSlide extends Component {
           source={require("../assets/1last.jpg")}
           style={styles.image}
         >
-          <AntDesign name={this.icon} size={100} color="white" />
-          <Text style={styles.title}>{item.title}</Text>
+          <FontAwesome5
+            name={item.icon}
+            size={100}
+            color="white"
+            style={{ textAlign: "center" }}
+          />
+          <Text style={styles.headt}>{item.title}</Text>
           <Text style={styles.title}>{item.text}</Text>
         </ImageBackground>
       </View>
