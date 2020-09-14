@@ -36,7 +36,7 @@ const Chatting = () => {
         {...props}
         wrapperStyle={{
           right: {
-            backgroundColor: "#6646ee",
+            backgroundColor: "#487EFB",
           },
         }}
         textStyle={{
@@ -51,7 +51,7 @@ const Chatting = () => {
     return (
       <Send {...props}>
         <View style={styles.sendingContainer}>
-          <IconButton icon="camera" size={32} color="#6646ee" />
+          <IconButton icon="camera" size={32} color="#487EFB" />
         </View>
       </Send>
     );
@@ -60,7 +60,7 @@ const Chatting = () => {
     return (
       <Send {...props}>
         <View style={styles.sendingContainer}>
-          <IconButton icon="send-circle" size={32} color="#6646ee" />
+          <IconButton icon="send-circle" size={32} color="#487EFB" />
         </View>
       </Send>
     );
@@ -73,11 +73,11 @@ const Chatting = () => {
   return (
     <>
       <Appbar.Header style={styles.header}>
-        <Appbar.BackAction onPress={_goBack} color="#6646ee" />
-        <Appbar.Content title="Frank Martin" color="#6646ee" />
-        <Appbar.Action icon="settings" onPress={_handleMore} color="#6646ee" />
-        <Appbar.Action icon="phone" onPress={_handleMore} color="#6646ee" />
-        <Appbar.Action icon="video" onPress={_handleMore} color="#6646ee" />
+        <Appbar.BackAction onPress={_goBack} color="#487EFB" />
+        <Appbar.Content title="Frank Martin" color="#487EFB" />
+        <Appbar.Action icon="settings" onPress={_handleMore} color="#487EFB" />
+        <Appbar.Action icon="phone" onPress={_handleMore} color="#487EFB" />
+        <Appbar.Action icon="video" onPress={_handleMore} color="#487EFB" />
       </Appbar.Header>
       <GiftedChat
         messages={messages}
