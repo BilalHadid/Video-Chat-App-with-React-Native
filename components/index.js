@@ -174,7 +174,7 @@ class MusicApp extends Component {
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-              Login
+              Sign Up
             </Text>
           </Animated.View>
           <Animated.View
