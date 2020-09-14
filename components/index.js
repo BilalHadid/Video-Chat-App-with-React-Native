@@ -192,7 +192,7 @@ class MusicApp extends Component {
               <Animated.View style={styles.closeButton}>
                 <Animated.Text
                   style={{
-                    fontSize: 15,
+                    fontSize: 16,
                     transform: [{ rotate: concat(this.rotateCross, "deg") }],
                   }}
                 >
